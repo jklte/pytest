@@ -8,18 +8,18 @@ import pytest
 import random
 
 '''
-Pytest-参数化 
+Pytest-参数化:
 '''
 
 
-# 单个参数：
+# 单个参数化，前面1个变量，后面是对应的数据；
 @pytest.mark.parametrize("x", [(1), (2), (6)])
 def test_add(x):
     print(x)
     assert x == random.randrange(1, 7)
 
 
-# 2个参数
+# 2个参数化，前面两个变量，后面是对应的数据；
 @pytest.mark.parametrize("x,y", [
     (9, 9),
     (2, 2),
@@ -41,7 +41,7 @@ def test_add(x, y):
     assert x == y
 
 
-# 可以传多个参数
+# 多个参数化，前面两个变量，后面是对应的数据；
 @pytest.mark.parametrize("x,y,z", [
     (3 + 5, 9, 8),
     (2 + 4, 6, 9),
